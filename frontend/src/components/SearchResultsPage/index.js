@@ -5,7 +5,7 @@ import withLocation from "../withLocation";
 class SearchResultsPage extends Component {
   onDeleteBookBtn = async (bookId) => {
     console.log(bookId);
-    const url = `http://localhost:5000/books/${bookId}`;
+    const url = `https://book-management-app-n4jf.onrender.com/books/${bookId}`;
 
     try {
       const response = await fetch(url, {
