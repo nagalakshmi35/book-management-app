@@ -1,0 +1,30 @@
+const genresTable = `
+CREATE TABLE IF NOT EXISTS Genres(
+GenreID INTEGER NOT NULL PRIMARY KEY, 
+Name VARCHAR(200) NOT NULL,
+Description TEXT NOT NULL
+)`;
+
+const authorsTable = `
+CREATE TABLE IF NOT EXISTS Authors(
+AuthorID INTEGER NOT NULL PRIMARY KEY,
+Name VARCHAR(200) NOT NULL
+)`;
+
+const booksTable = `
+CREATE TABLE IF NOT EXISTS Books(
+BookID INTEGER NOT NULL PRIMARY KEY,
+Title VARCHAR(200) NOT NULL, 
+AuthorID INTEGER NOT NULL,
+GenreID INTEGER NOT NULL,
+Pages INTEGER NOT NULL,
+PublishedDate DATE,
+FOREIGN KEY(AuthorID) REFERENCES Authors(AuthorID) ON DELETE CASCADE,
+FOREIGN KEY(GenreID) REFERENCES Genres(GenreID) ON DELETE CASCADE
+)`;
+
+module.exports = {
+  booksTable,
+  genresTable,
+  authorsTable,
+};
