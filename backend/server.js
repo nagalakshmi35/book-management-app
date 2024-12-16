@@ -4,7 +4,7 @@ const sqlite3 = require("sqlite3").verbose();
 const cors = require("cors");
 const { booksTable, genresTable, authorsTable } = require("./tableCreation.js");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || "https://book-management-app-frontend.onrender.com";
 const app = express();
 
 app.use(cors());
