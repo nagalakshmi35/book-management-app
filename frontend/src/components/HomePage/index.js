@@ -16,7 +16,7 @@ class HomePage extends Component {
   }
 
   getAllBooksList = async () => {
-    const url = `http://localhost:5000/books/`;
+    const url = `https://book-management-app-n4jf.onrender.com/books/`;
 
     try {
       const response = await fetch(url);
